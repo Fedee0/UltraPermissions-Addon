@@ -26,16 +26,12 @@ public class AddPermissionToGroup extends Element {
         return "Add Permission To Group";
     }
 
-    public String getRequiredPlugin() {
-        return "UltraPermissions";
-    }
-
     public String getInternalName() {
         return "add-permissions-to-group";
     }
 
     public boolean isHidingIfNotCompatible() {
-        return true;
+        return false;
     }
 
     public XMaterial getMaterial() {

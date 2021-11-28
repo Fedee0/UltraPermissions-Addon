@@ -26,16 +26,12 @@ public class RemovePermissionFromGroup extends Element {
         return "Remove Permission from Group";
     }
 
-    public String getRequiredPlugin() {
-        return "UltraPermissions";
-    }
-
     public String getInternalName() {
         return "remove-permissions-from-group";
     }
 
     public boolean isHidingIfNotCompatible() {
-        return true;
+        return false;
     }
 
     public XMaterial getMaterial() {

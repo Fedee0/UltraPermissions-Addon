@@ -34,7 +34,7 @@ public class PlayerRemoveGroup extends Element {
     }
 
     public boolean isHidingIfNotCompatible() {
-        return true;
+        return false;
     }
 
     public XMaterial getMaterial() {

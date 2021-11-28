@@ -19,7 +19,6 @@ import me.TechsCode.UltraPermissions.UltraPermissions;
 import me.TechsCode.UltraPermissions.UltraPermissionsAPI;
 import me.TechsCode.UltraPermissions.storage.objects.Group;
 
-import java.util.UUID;
 
 public class PlayerAddGroup extends Element {
     public PlayerAddGroup(UltraCustomizer plugin) {
@@ -35,7 +34,7 @@ public class PlayerAddGroup extends Element {
     }
 
     public boolean isHidingIfNotCompatible() {
-        return true;
+        return false;
     }
 
     public XMaterial getMaterial() {

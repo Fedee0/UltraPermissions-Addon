@@ -25,16 +25,12 @@ public class CreateGroup extends Element {
         return "Create Group";
     }
 
-    public String getRequiredPlugin() {
-        return "UltraPermissions";
-    }
-
     public String getInternalName() {
         return "create-group";
     }
 
     public boolean isHidingIfNotCompatible() {
-        return true;
+        return false;
     }
 
     public XMaterial getMaterial() {

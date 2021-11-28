@@ -26,16 +26,12 @@ public class DeleteGroup extends Element {
         return "Delete Group";
     }
 
-    public String getRequiredPlugin() {
-        return "UltraPermissions";
-    }
-
     public String getInternalName() {
         return "delete-group";
     }
 
     public boolean isHidingIfNotCompatible() {
-        return true;
+        return false;
     }
 
     public XMaterial getMaterial() {
