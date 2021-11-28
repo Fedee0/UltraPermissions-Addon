@@ -1,0 +1,5 @@
+name: UPermissionsAddon
+version: '${project.version}'
+main: me.fedee.upermsaddon.upermissionsaddon.UPermissionsAddon
+depend: [ UltraPermissions ]
+authors: [ Fedee ]
