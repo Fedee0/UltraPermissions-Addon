@@ -36,7 +36,7 @@ public class RemovePermissionFromUser extends Element {
     }
 
     public XMaterial getMaterial() {
-        return XMaterial.BOOKSHELF;
+        return XMaterial.REDSTONE;
     }
 
     public String[] getDescription() {
