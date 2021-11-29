@@ -2,6 +2,7 @@ package me.fedee.upermsaddon.upermissionsaddon.permissions;
 import me.TechsCode.UltraPermissions.storage.objects.User;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 
 import me.TechsCode.UltraCustomizer.UltraCustomizer;
 import me.TechsCode.UltraCustomizer.base.item.XMaterial;
@@ -16,7 +17,6 @@ import me.TechsCode.UltraCustomizer.scriptSystem.objects.ScriptInstance;
 import me.TechsCode.UltraCustomizer.scriptSystem.objects.datatypes.DataType;
 import me.TechsCode.UltraPermissions.UltraPermissions;
 import me.TechsCode.UltraPermissions.UltraPermissionsAPI;
-import org.bukkit.entity.Player;
 
 public class AddPermissionToUser extends Element {
     public AddPermissionToUser(UltraCustomizer plugin) {
@@ -28,7 +28,7 @@ public class AddPermissionToUser extends Element {
     }
 
     public String getInternalName() {
-        return "add-permissions-to-user";
+        return "add-permission-to-user";
     }
 
     public boolean isHidingIfNotCompatible() {
@@ -68,7 +68,7 @@ public class AddPermissionToUser extends Element {
 
             if (api.getUsers().name(playername).isPresent()) {
                 User u = api.getUsers().name(playername).get();
-                u.newPermission(permission);
+                u.newPermission(permission).create();
             } else {
                 Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', "&4[ERROR] &c- A User with this name don't exist!"));
             }

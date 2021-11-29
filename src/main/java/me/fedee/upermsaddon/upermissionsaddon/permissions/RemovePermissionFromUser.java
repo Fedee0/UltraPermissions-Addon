@@ -1,6 +1,8 @@
 package me.fedee.upermsaddon.upermissionsaddon.permissions;
+import me.TechsCode.UltraPermissions.storage.objects.User;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 
 import me.TechsCode.UltraCustomizer.UltraCustomizer;
 import me.TechsCode.UltraCustomizer.base.item.XMaterial;
@@ -15,19 +17,18 @@ import me.TechsCode.UltraCustomizer.scriptSystem.objects.ScriptInstance;
 import me.TechsCode.UltraCustomizer.scriptSystem.objects.datatypes.DataType;
 import me.TechsCode.UltraPermissions.UltraPermissions;
 import me.TechsCode.UltraPermissions.UltraPermissionsAPI;
-import me.TechsCode.UltraPermissions.storage.objects.Group;
 
-public class AddPermissionToGroup extends Element {
-    public AddPermissionToGroup(UltraCustomizer plugin) {
+public class RemovePermissionFromUser extends Element {
+    public RemovePermissionFromUser(UltraCustomizer plugin) {
         super(plugin);
     }
 
     public String getName() {
-        return "Add Permission To Group";
+        return "Remove Permission From User";
     }
 
     public String getInternalName() {
-        return "add-permission-to-group";
+        return "remove-permission-from-user";
     }
 
     public boolean isHidingIfNotCompatible() {
@@ -35,15 +36,15 @@ public class AddPermissionToGroup extends Element {
     }
 
     public XMaterial getMaterial() {
-        return XMaterial.LEVER;
+        return XMaterial.BOOKSHELF;
     }
 
     public String[] getDescription() {
-        return new String[] { "Allows you to add a permission to a group", "(UltraPermissions)" };
+        return new String[] { "Allows you to remove a permission from a user", "(UltraPermissions)" };
     }
 
     public Argument[] getArguments(ElementInfo elementInfo) {
-        return new Argument[] { new Argument("group", "Group", DataType.STRING, elementInfo),
+        return new Argument[] { new Argument("player", "Player", DataType.PLAYER, elementInfo),
                 new Argument("permission", "Permission", DataType.STRING, elementInfo) };
     }
 
@@ -60,14 +61,16 @@ public class AddPermissionToGroup extends Element {
 
             UltraPermissionsAPI api = UltraPermissions.getAPI();
 
-            String groupName = (String) getArguments(info)[0].getValue(instance);
+            Player player = (Player) getArguments(info)[0].getValue(instance);
             String permission = (String) getArguments(info)[1].getValue(instance);
 
-            if (api.getGroups().name(groupName).isPresent()) {
-                Group g = api.getGroups().name(groupName).get();
-                g.newPermission(permission).create();
+            String playername = player.getName();
+
+            if (api.getUsers().name(playername).isPresent()) {
+                User u = api.getUsers().name(playername).get();
+                u.getPermissions().name(permission).get(0).remove();
             } else {
-                Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', "&4[ERROR] &c- A Group with this name don't exist!"));
+                Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', "&4[ERROR] &c- A User/Permission with this name don't exist!"));
             }
 
 

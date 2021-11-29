@@ -27,7 +27,7 @@ public class RemovePermissionFromGroup extends Element {
     }
 
     public String getInternalName() {
-        return "remove-permissions-from-group";
+        return "remove-permission-from-group";
     }
 
     public boolean isHidingIfNotCompatible() {
