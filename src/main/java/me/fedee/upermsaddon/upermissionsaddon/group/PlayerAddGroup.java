@@ -1,5 +1,4 @@
 package me.fedee.upermsaddon.upermissionsaddon.group;
-import me.TechsCode.UltraPermissions.storage.objects.User;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -18,6 +17,7 @@ import me.TechsCode.UltraCustomizer.scriptSystem.objects.datatypes.DataType;
 import me.TechsCode.UltraPermissions.UltraPermissions;
 import me.TechsCode.UltraPermissions.UltraPermissionsAPI;
 import me.TechsCode.UltraPermissions.storage.objects.Group;
+import me.TechsCode.UltraPermissions.storage.objects.User;
 
 
 public class PlayerAddGroup extends Element {
