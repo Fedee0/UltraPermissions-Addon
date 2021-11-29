@@ -7,6 +7,8 @@ Addon for the [UltraCustomizer](https://www.spigotmc.org/resources/ultra-customi
 - **Player Remove Group** - *Allows you to remove a player from a group*
 - **Add Permission to Group** - *Allows you to add a permission to a group*
 - **Remove Permission from Group** - *Allows you to remove a permission from a group*
+- **Add Permission to User** - *Allows you to add a permission to a user*
+- **Remove Permission from User** - *Allows you to remove a permission from a user*
 ## Notes
 It’s one of my first times that I use Java so the code can be weird or wrong.
 
