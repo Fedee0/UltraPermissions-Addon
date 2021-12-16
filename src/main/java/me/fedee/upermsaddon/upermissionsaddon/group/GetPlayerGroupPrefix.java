@@ -42,7 +42,7 @@ public class GetPlayerGroupPrefix extends Element {
     }
 
     public String[] getDescription() {
-        return new String[] { "Allows you to add a player to a group", "(UltraPermissions)" };
+        return new String[] { "Allows you to get the prefix of the player group", "(UltraPermissions)" };
     }
 
     public Argument[] getArguments(ElementInfo elementInfo) {
@@ -71,8 +71,10 @@ public class GetPlayerGroupPrefix extends Element {
                        if (user.isPresent()) {
                            User u = user.get();
                            Group g = u.getActiveGroups().bestToWorst().get(0);
-                           if (g.getPrefix().isPresent()) {
-                               return g.getPrefix().get();
+                           Optional<String> prefix = g.getPrefix();
+                           if (prefix.isPresent()) {
+                               String groupprefix = prefix.get();
+                               return groupprefix;
                            }
                        }
 
