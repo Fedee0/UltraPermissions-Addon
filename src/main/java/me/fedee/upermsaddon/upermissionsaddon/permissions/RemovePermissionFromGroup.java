@@ -30,8 +30,12 @@ public class RemovePermissionFromGroup extends Element {
         return "remove-permission-from-group";
     }
 
+    public String getRequiredPlugin() {
+        return "UltraPermissions";
+    }
+
     public boolean isHidingIfNotCompatible() {
-        return false;
+        return true;
     }
 
     public XMaterial getMaterial() {

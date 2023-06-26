@@ -33,8 +33,12 @@ public class PlayerAddGroup extends Element {
         return "add-group-player";
     }
 
+    public String getRequiredPlugin() {
+        return "UltraPermissions";
+    }
+
     public boolean isHidingIfNotCompatible() {
-        return false;
+        return true;
     }
 
     public XMaterial getMaterial() {

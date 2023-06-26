@@ -30,8 +30,12 @@ public class AddPermissionToGroup extends Element {
         return "add-permission-to-group";
     }
 
+    public String getRequiredPlugin() {
+        return "UltraPermissions";
+    }
+
     public boolean isHidingIfNotCompatible() {
-        return false;
+        return true;
     }
 
     public XMaterial getMaterial() {

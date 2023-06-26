@@ -33,8 +33,12 @@ public class GetPlayerGroupPrefix extends Element {
         return "get-player-group-prefix";
     }
 
+    public String getRequiredPlugin() {
+        return "UltraPermissions";
+    }
+
     public boolean isHidingIfNotCompatible() {
-        return false;
+        return true;
     }
 
     public XMaterial getMaterial() {
@@ -73,8 +77,7 @@ public class GetPlayerGroupPrefix extends Element {
                            Group g = u.getActiveGroups().bestToWorst().get(0);
                            Optional<String> prefix = g.getPrefix();
                            if (prefix.isPresent()) {
-                               String groupprefix = prefix.get();
-                               return groupprefix;
+                               return prefix.get();
                            }
                        }
 

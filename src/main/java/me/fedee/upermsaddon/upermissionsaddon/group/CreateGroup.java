@@ -29,8 +29,12 @@ public class CreateGroup extends Element {
         return "create-group";
     }
 
+    public String getRequiredPlugin() {
+        return "UltraPermissions";
+    }
+
     public boolean isHidingIfNotCompatible() {
-        return false;
+        return true;
     }
 
     public XMaterial getMaterial() {

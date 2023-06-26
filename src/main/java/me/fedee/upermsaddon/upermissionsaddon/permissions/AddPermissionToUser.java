@@ -31,8 +31,12 @@ public class AddPermissionToUser extends Element {
         return "add-permission-to-user";
     }
 
+    public String getRequiredPlugin() {
+        return "UltraPermissions";
+    }
+
     public boolean isHidingIfNotCompatible() {
-        return false;
+        return true;
     }
 
     public XMaterial getMaterial() {

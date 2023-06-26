@@ -33,8 +33,12 @@ public class PlayerRemoveGroup extends Element {
         return "remove-group-player";
     }
 
+    public String getRequiredPlugin() {
+        return "UltraPermissions";
+    }
+
     public boolean isHidingIfNotCompatible() {
-        return false;
+        return true;
     }
 
     public XMaterial getMaterial() {

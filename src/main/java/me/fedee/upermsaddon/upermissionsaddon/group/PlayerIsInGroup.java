@@ -28,8 +28,12 @@ public class PlayerIsInGroup extends Element {
         return "player-is-in-group";
     }
 
+    public String getRequiredPlugin() {
+        return "UltraPermissions";
+    }
+
     public boolean isHidingIfNotCompatible() {
-        return false;
+        return true;
     }
 
     public XMaterial getMaterial() {

@@ -31,8 +31,12 @@ public class RemovePermissionFromUser extends Element {
         return "remove-permission-from-user";
     }
 
+    public String getRequiredPlugin() {
+        return "UltraPermissions";
+    }
+
     public boolean isHidingIfNotCompatible() {
-        return false;
+        return true;
     }
 
     public XMaterial getMaterial() {
